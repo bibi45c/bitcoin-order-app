@@ -43,8 +43,9 @@ jobs:
           $HOME/dependency-check/dependency-check/bin/dependency-check.sh \
             --project "bitcoin" \
             --nvdApiKey "$NVD_API_KEY" \
-            --nvdApiDelay 6000 \
+            --nvdApiDelay 3500 \
             --nvdMaxRetryCount 20 \
+            --nvdApiResultsPerPage 1000 \
             --out . \
             --scan . \
             --disableOssIndex
