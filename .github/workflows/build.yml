@@ -61,6 +61,7 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v3
         with:
           github-token: ${{ secrets.WORKSHOP6_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.WORKSHOP6_GITHUB_TOKEN }}
           output-file: "false"
 
       - name: Create Release
