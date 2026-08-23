@@ -1,6 +1,10 @@
 #!/bin/bash
 
 docker pull zaproxy/zap-stable
-docker run -i zaproxy/zap-stable zap-baseline.py -t "https://kenken64.github.io/bitcoin-order-app"
+
+docker run --rm -v "$(pwd):/zap/wrk/:rw" -t zaproxy/zap-stable \
+  zap-baseline.py \
+  -t "https://kenken64.github.io/bitcoin-order-app" \
+  -r zap_baseline_report.html
 
 echo $? > /dev/null
